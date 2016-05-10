@@ -1,0 +1,66 @@
+{
+  "categories": ["default", "Work", "Personal"],
+  "default": [{
+    "displayName": "Clip1",
+    "description": "Clip1",
+    "isSecured": false,
+    "storedValue": "ClipValue1"
+  }, {
+    "displayName": "Clip2",
+    "description": "Clip2",
+    "isSecured": false,
+    "storedValue": "ClipValue2"
+  }, {
+    "displayName": "Clip3",
+    "description": "Clip3",
+    "isSecured": false,
+    "storedValue": "ClipValue3"
+  }, {
+    "displayName": "Clip4",
+    "description": "Clip4",
+    "isSecured": false,
+    "storedValue": "ClipValue4"
+  }],
+  "Work": [{
+    "displayName": "Clip1",
+    "description": "Clip1",
+    "isSecured": false,
+    "storedValue": "ClipValue1"
+  }, {
+    "displayName": "Clip2",
+    "description": "Clip2",
+    "isSecured": false,
+    "storedValue": "ClipValue2"
+  }, {
+    "displayName": "Clip3",
+    "description": "Clip3",
+    "isSecured": false,
+    "storedValue": "ClipValue3"
+  }, {
+    "displayName": "Clip4",
+    "description": "Clip4",
+    "isSecured": false,
+    "storedValue": "ClipValue4"
+  }],
+  "Personal": [{
+    "displayName": "Clip1",
+    "description": "Clip1",
+    "isSecured": false,
+    "storedValue": "ClipValue1"
+  }, {
+    "displayName": "Clip2",
+    "description": "Clip2",
+    "isSecured": false,
+    "storedValue": "ClipValue2"
+  }, {
+    "displayName": "Clip3",
+    "description": "Clip3",
+    "isSecured": false,
+    "storedValue": "ClipValue3"
+  }, {
+    "displayName": "Clip4",
+    "description": "Clip4",
+    "isSecured": false,
+    "storedValue": "ClipValue4"
+  }]
+}

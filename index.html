@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  <title>
+    My head
+  </title>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./app/stylesheet/nav-tab.css">
+</head>
+
+<body style="overflow: hidden;background-color: darkgray;" text="#C0C080 !important">
+  <div id="left"></div>
+  <div id="right"></div>
+  <div id="top"></div>
+  <div id="bottom"></div>
+  <div class="container">
+    <div class="row" style="padding: 10px;height: 330;">
+      <div id="clipboardColumn1" class="col-xs-6"></div>
+      <div id="clipboardColumn2" class="col-xs-6"></div>
+    </div>
+    <div class="row" style="background-color: #C1BCBC;height: 140;">
+      <div id="clipboardCategory" class="col-md-8" style="color: rgb(101, 1, 61);background-color: #C1BCBC;"></div>
+    </div>
+  </div>
+  <div id="draggable">
+    <img id="configGear" src="./resources/image/gear2.png" style="cursor:pointer; width:64px;" />
+  </div>
+  <div class="clipHistory">
+    <span id="toggleRecordedClips" class="glyphicon glyphicon-paperclip badge" title="Recently used clips"> r&nbsp;</span>
+  </div>
+  <div id="recentClipContainer">
+    <div id="recentClipList" style="">
+    </div>
+  </div>
+
+  <script id="valueTemplate" type="x-tmpl-mustache">
+    <li class="list-group-item clipTooltip" data-toggle="tooltip" title="{{description}}" style="color: #001E38;background-color: #C1BCBC;">
+      <span id="clip{{index}}" class="badge pull-left" style="margin-right: 20px">{{index}}</span>
+      <input type="hidden" id="resultClip{{index}}" value="{{storedValue}}"> {{displayName}}
+      <br/>
+      {{#isSecured}}
+        <text style="color: #710A0A; padding-left: 60px;">Clip Value is hidden</text>
+        <img class="secured" src="./resources/image/secured1.png" style="max-width: 25px;float: right;margin-top: -15px;margin-right: 10px;" />
+      {{/isSecured}}
+      {{^isSecured}}
+        <text style="color: #867F7F; padding-left: 60px;">{{storedValue}}</text>
+      {{/isSecured}}
+    </li>
+  </script>
+  <script id="categoryTemplate" type="x-tmpl-mustache">
+    <div class="col-md-3 col-sm-4 col-xs-6" style="padding-top: 20px;">
+      <a href="#" class="thumbnail purple categoryItem" style="background-color: #A0A298;">
+        <span class="badge pull-left" style="margin-right: 20px">{{index}}</span>
+        <text id="category{{index}}" style="font-weight: bold;">{{categoryName}}</text>
+      </a>
+    </div>
+  </script>
+  <script id="recordedClipTemplate" type="x-tmpl-mustache">
+    <br>
+    <span class="recordedClip" style="width: 100%;height:30px;background-color: black;">
+      <span class="badge pull-left">{{index}}</span>
+      <input type="hidden"  id="recentResultClip{{index}}" value="{{clipValue}}">
+      <text style="padding-left: 20px;">{{clipDescription}}</text>
+    </span>
+  </script>
+
+  <script src="./app/util.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>
+    Nee bonda ra..
+  </title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+  <script>
+  function itsAFunc(event){
+    console.log("Sarle...");
+      console.log(this);
+      console.log($(this));
+      console.log(event.getElementsByTagName("INPUT")[0].value);
+  }
+  </script>
+
+
+</head>
+<body style="-webkit-app-region: drag; overflow: hidden;" text="#C0C080 !important">
+<div class="row" style="padding: 10px;">
+  <div id="clipboardColumn1" class="col-xs-6">
+    <li class="list-group-item clipTooltip" onclick="javascript: itsAFunc(this);" data-toggle="tooltip" title="title1">
+        <span id="clip{{index}}" class="badge pull-left" style="margin-right: 20px">{{index}}</span>
+        <input type="hidden" id="resultClip{{index}}" value="{{storedValue1}}">
+        {{displayName}} <br/>
+        <text style="color: gainsboro; padding-left: 60px;">{{storedValue}}</text>
+    </li>
+    <li class="list-group-item clipTooltip" onclick="javascript: itsAFunc(this);" data-toggle="tooltip" title="{{description}}">
+        <span id="clip{{index}}" class="badge pull-left" style="margin-right: 20px">{{index}}</span>
+        <input type="hidden" id="resultClip{{index}}" value="{{storedValue2}}">
+        {{displayName}} <br/>
+        <text style="color: gainsboro; padding-left: 60px;">{{storedValue}}</text>
+    </li>
+  </div>
+  <div id="clipboardColumn2" class="col-xs-6"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+
+<head>
+  <title>
+    Clip Manager
+  </title>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body style="overflow: hidden;background-color: darkgray;" text="#C0C080 !important">
+  <div id="left"></div>
+  <div id="right"></div>
+  <div id="top"></div>
+  <div id="bottom"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 kakarla-tab-container">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 kakarla-tab-menu">
+          <div id="tabularMenu" class="list-group">
+          </div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 kakarla-tab">
+          <div id="clipTabContainer">
+          </div>
+
+          <div id="configButtons">
+            <a href="#" id="saveClipChanges" class="btn btn-success">
+              <span class="glyphicon glyphicon-ok"></span> Save </a>
+            <a href="#"  id="cancelClipChanges" class="btn btn-danger">
+              <span class="glyphicon glyphicon-remove"></span> Cancel </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script id="categoryTabTemplate" type="x-tmpl-mustache">
+    <a href="#" class="list-group-item text-center">
+      {{categoryName}}
+    </a>
+  </script>
+  <script id="clipContainer" type="x-tmpl-mustache">
+    <div class="kakarla-tab-content" />
+  </script>
+  <script id="clipEditNode" type="x-tmpl-mustache">
+    <div id="clipEditNode">
+      <span class="clipFieldName">Display name:</span> <input id="editClipDisplayName" class="clipFieldValue" type="text" name="Display Name" value="{{displayName}}">
+      <br><span class="clipFieldName"> Description:</span> <input id="editClipDescription" class="clipFieldValue" type="text" name="Description" value="{{description}}">
+      <br> <span class="clipFieldName">Value to be stored:</span> <input id="editClipStoredValue" class="clipFieldValue" {{#isSecured}}type="password"{{/isSecured}}{{^isSecured}}type="text"{{/isSecured}} name="value" value="{{storedValue}}">
+      <br><br><input type="checkbox" id="secureCheckBox" {{#isSecured}}checked="checked"{{/isSecured}} style="margin-left: 25%;float: left;">&nbsp;&nbsp;<span>Secured</span>
+      <div style="display: inline; float:right; padding-right:20%">
+        <button data-toggle="tooltip" class="saveClip glyphicon glyphicon-ok btn-success" title="Save" />
+        <button data-toggle="tooltip" class="removeClip glyphicon glyphicon-remove-circle btn-danger" title="cancel" />
+      </div>
+    </div>
+  </script>
+  <script id="clipNode" type="x-tmpl-mustache">
+    <div class="list-group-item clipBox">
+      <div class="clipInfo">
+        {{#isSecured}}
+        <img class="secured" />{{/isSecured}}
+        <div class="clipTextWrap displayName" data-toggle="tooltip" style="max-width:45%" title="Name: {{displayName}}">{{displayName}} </div>
+        <div class="clipTextWrap description" data-toggle="tooltip" style="color: #9F81A9;max-width:40%;padding-left: 15px;" title="Description: {{description}}">{{description}}</div>
+        <br/> {{#isSecured}}
+        <div class="clipTextWrap" style="color: #980808;width:70%;font-style: italic;padding-left: 30px;">Clip Value is secured</div><input class="secured" type="hidden" value="{{storedValue}}">{{/isSecured}} {{^isSecured}}
+        <div class="clipTextWrap storedValue" data-toggle="tooltip" style="color: ##366110;width:60%;padding-left: 30px;" title="StoredValue: {{storedValue}}">{{storedValue}}</div>{{/isSecured}}
+        <div class="clipButtons">
+          <button data-toggle="tooltip" class="editClip glyphicon glyphicon-edit btn-success" title="Edit" />
+          <button data-toggle="tooltip" class="deleteClip glyphicon glyphicon-trash btn-danger" title="Delete" />
+        </div>
+      </div>
+    </div>
+  </script>
+  <script src="./app/clipConfig.js"></script>
+  <link rel="stylesheet" href="./app/stylesheet/nav-tab.css">
+
+</body>
+
+</html>
