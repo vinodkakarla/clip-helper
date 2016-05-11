@@ -28,7 +28,7 @@ app.on('ready', function() {
     mainWindow.hide();
     //mainWindow.close();
   });
-  mainWindow.openDevTools();
+  //mainWindow.openDevTools();
   // console.log(globalShortcut);
   globalShortcut.unregister('ctrl+e');
   // Register Global shortcut

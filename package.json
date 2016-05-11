@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
+    "_comment": "Wanted to build? Use command 'npm run-script build'",
     "build": "electron-packager . ClipManager --platform=linux --arch=x64",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +19,9 @@
     "mustache": "^2.1.3",
     "node-webkit.jsx": "^0.1.1",
     "fs-jetpack": "^0.7.0",
-    "node-schedule":"^1.0.0"
+    "node-schedule":"^1.0.0",
+    "electron-packager":"^7.0.0",
+    "jquery":"^2.2.3"
   },
   "dependencies": {
     "electron-plugins": "0.0.4",
