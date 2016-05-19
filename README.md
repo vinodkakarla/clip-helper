@@ -19,3 +19,8 @@ To build a deployable package, please follow the below steps..
 * **'npm install'** - *installs all dev related dependencies to the local project*
 * **'npm start'** - *starts the app with default clipboard templates*
 * **'electron-package-interactive'** or **'epi'** - *opens an interactive console which ultimately creates platform specific deployable package*
+
+## Download releases
+
+* [Windows-x64](https://drive.google.com/file/d/0B2oKOrmS5hGmSG9FNkx5XzZKMTQ/view?usp=sharing)
+* [Linux-x64](https://drive.google.com/file/d/0B2oKOrmS5hGmYnZKQnp5M2FKOEE/view?usp=sharing)
