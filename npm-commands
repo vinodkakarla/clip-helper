@@ -1,0 +1,11 @@
+npm-check -u
+    Command to update all local npm packages
+
+'npm install'
+    installs all dev related dependencies to the local project
+
+'npm start'
+    starts the app with default clipboard templates
+
+'electron-package-interactive' or 'epi'
+    opens an interactive console which ultimately creates platform specific deployable package
