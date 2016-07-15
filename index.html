@@ -2,20 +2,24 @@
 
 <head>
   <title>
-    My head
+    Clip Manager
   </title>
   <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="./app/stylesheet/nav-tab.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./my-app/stylesheet/nav-tab.css">
 </head>
 
 <body style="overflow: hidden;background-color: darkgray;" text="#C0C080 !important">
-  <div id="left"></div>
+  <div id="left">
+
+  </div>
   <div id="right"></div>
-  <div id="top"></div>
+  <div id="top">
+    <img class="clipHelp towards-left" title="Help Content" data-toggle="modal" data-target="#clipHelpInfo">
+  </div>
   <div id="bottom"></div>
   <div class="container">
     <div class="row" style="padding: 10px;height: 330;">
@@ -37,17 +41,29 @@
     </div>
   </div>
 
+
+  <div id="clipHelpInfo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="text-align: center;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Let's clear the air</h4>
+        </div>
+        <div class="modal-body" id="clipHelpData">
+          <p> Oops.. Seems I have misplaced Help Content :( </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script id="valueTemplate" type="x-tmpl-mustache">
     <li class="list-group-item clipTooltip" data-toggle="tooltip" title="{{description}}" style="color: #001E38;background-color: #C1BCBC;">
       <span id="clip{{index}}" class="badge pull-left" style="margin-right: 20px">{{index}}</span>
       <input type="hidden" id="resultClip{{index}}" value="{{storedValue}}"> {{displayName}}
-      <br/>
-      {{#isSecured}}
-        <text style="color: #710A0A; padding-left: 60px;">Clip Value is hidden</text>
-        <img class="secured" src="./resources/image/secured1.png" style="max-width: 25px;float: right;margin-top: -15px;margin-right: 10px;" />
-      {{/isSecured}}
-      {{^isSecured}}
-        <text style="color: #867F7F; padding-left: 60px;">{{storedValue}}</text>
+      <br/> {{#isSecured}}
+      <text style="color: #710A0A; padding-left: 60px;">Clip Value is hidden</text>
+      <img class="secured" src="./resources/image/secured1.png" style="max-width: 25px;float: right;margin-top: -15px;margin-right: 10px;" /> {{/isSecured}} {{^isSecured}}
+      <text style="color: #867F7F; padding-left: 60px;">{{storedValue}}</text>
       {{/isSecured}}
     </li>
   </script>
@@ -63,12 +79,14 @@
     <br>
     <span class="recordedClip" style="width: 100%;height:30px;background-color: black;">
       <span class="badge pull-left">{{index}}</span>
-      <input type="hidden"  id="recentResultClip{{index}}" value="{{clipValue}}">
-      <text style="padding-left: 20px;">{{clipDescription}}</text>
+      <input type="hidden" id="recentResultClip{{index}}" value="{{clipValue}}">
+      <div style='width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>
+        <text style="padding-left: 20px;">{{clipDescription}}</text>
+      </div>
     </span>
   </script>
 
-  <script src="./app/util.js"></script>
+  <script src="./my-app/util.js"></script>
 
 </body>
 

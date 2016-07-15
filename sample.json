@@ -1,66 +1,87 @@
 {
-  "categories": ["default", "Work", "Personal"],
-  "default": [{
-    "displayName": "Clip1",
-    "description": "Clip1",
-    "isSecured": false,
-    "storedValue": "ClipValue1"
-  }, {
-    "displayName": "Clip2",
-    "description": "Clip2",
-    "isSecured": false,
-    "storedValue": "ClipValue2"
-  }, {
-    "displayName": "Clip3",
-    "description": "Clip3",
-    "isSecured": false,
-    "storedValue": "ClipValue3"
-  }, {
-    "displayName": "Clip4",
-    "description": "Clip4",
-    "isSecured": false,
-    "storedValue": "ClipValue4"
-  }],
-  "Work": [{
-    "displayName": "Clip1",
-    "description": "Clip1",
-    "isSecured": false,
-    "storedValue": "ClipValue1"
-  }, {
-    "displayName": "Clip2",
-    "description": "Clip2",
-    "isSecured": false,
-    "storedValue": "ClipValue2"
-  }, {
-    "displayName": "Clip3",
-    "description": "Clip3",
-    "isSecured": false,
-    "storedValue": "ClipValue3"
-  }, {
-    "displayName": "Clip4",
-    "description": "Clip4",
-    "isSecured": false,
-    "storedValue": "ClipValue4"
-  }],
-  "Personal": [{
-    "displayName": "Clip1",
-    "description": "Clip1",
-    "isSecured": false,
-    "storedValue": "ClipValue1"
-  }, {
-    "displayName": "Clip2",
-    "description": "Clip2",
-    "isSecured": false,
-    "storedValue": "ClipValue2"
-  }, {
-    "displayName": "Clip3",
-    "description": "Clip3",
-    "isSecured": false,
-    "storedValue": "ClipValue3"
-  }, {
-    "displayName": "Clip4",
-    "description": "Clip4",
-    "isSecured": false,
-    "storedValue": "ClipValue4"
-  }]
+  "shortcutKey": "e",
+  "helpContent": "<h1>ClipBoard Manager</h1> <p>Cross platform desktop app for managing clipboards. This app make it available all the clips on your finger tips. Even a secured password can be cliped to dashboard with out making it visible to any one.</p> <h2>Getting Started</h2> <p>This app is built over electron using node.js.</p> <h3>Prerequisities</h3> <p>This app needs Node.js and npm packages to be installed.</p> <h3>Installing</h3> <h2>Deployment</h2> <p>To build a deployable package, please follow the below steps..</p> <ul> <li><strong>'npm install'</strong> - <em>installs all dev related dependencies to the local project</em></li> <li><strong>'npm start'</strong> - <em>starts the app with default clipboard templates</em></li> <li><strong>'electron-package-interactive'</strong> or <strong>'epi'</strong> - <em>opens an interactive console which ultimately creates platform specific deployable package</em></li> </ul> <h2>Download releases</h2> <ul> <li><a href='https://drive.google.com/file/d/0B2oKOrmS5hGmSG9FNkx5XzZKMTQ/view?usp=sharing'>Windows-x64</a></li> <li><a href='https://drive.google.com/file/d/0B2oKOrmS5hGmYnZKQnp5M2FKOEE/view?usp=sharing'>Linux-x64</a></li> </ul> ",
+  "categories": [
+    "default",
+    "Work",
+    "Personal"
+  ],
+  "default": [
+    {
+      "displayName": "Clip1",
+      "description": "Clip1",
+      "isSecured": false,
+      "storedValue": "ClipValue1"
+    },
+    {
+      "displayName": "Clip2",
+      "description": "Clip2",
+      "isSecured": false,
+      "storedValue": "ClipValue2"
+    },
+    {
+      "displayName": "Clip3",
+      "description": "Clip3",
+      "isSecured": false,
+      "storedValue": "ClipValue3"
+    },
+    {
+      "displayName": "Clip4",
+      "description": "Clip4",
+      "isSecured": false,
+      "storedValue": "ClipValue4"
+    }
+  ],
+  "Work": [
+    {
+      "displayName": "Clip1",
+      "description": "Clip1",
+      "isSecured": false,
+      "storedValue": "ClipValue1"
+    },
+    {
+      "displayName": "Clip2",
+      "description": "Clip2",
+      "isSecured": false,
+      "storedValue": "ClipValue2"
+    },
+    {
+      "displayName": "Clip3",
+      "description": "Clip3",
+      "isSecured": false,
+      "storedValue": "ClipValue3"
+    },
+    {
+      "displayName": "Clip4",
+      "description": "Clip4",
+      "isSecured": false,
+      "storedValue": "ClipValue4"
+    }
+  ],
+  "Personal": [
+    {
+      "displayName": "Clip1",
+      "description": "Clip1",
+      "isSecured": false,
+      "storedValue": "ClipValue1"
+    },
+    {
+      "displayName": "Clip2",
+      "description": "Clip2",
+      "isSecured": false,
+      "storedValue": "ClipValue2"
+    },
+    {
+      "displayName": "Clip3",
+      "description": "Clip3",
+      "isSecured": false,
+      "storedValue": "ClipValue3"
+    },
+    {
+      "displayName": "Clip4",
+      "description": "Clip4",
+      "isSecured": false,
+      "storedValue": "ClipValue4"
+    }
+  ]
 }

@@ -12,9 +12,13 @@
 </head>
 
 <body style="overflow: hidden;background-color: darkgray;" text="#C0C080 !important">
-  <div id="left"></div>
+  <div id="left">
+  </div>
   <div id="right"></div>
-  <div id="top"></div>
+  <div id="top">
+    <img class="shortcutConfig towards-left" title="Shortcut Config" data-toggle="modal" data-target="#shortcutConfigPanel">
+    <img class="clipHelp towards-right" title="Help Content" data-toggle="modal" data-target="#clipHelpInfo">
+  </div>
   <div id="bottom"></div>
   <div class="container">
     <div class="row">
@@ -30,13 +34,65 @@
           <div id="configButtons">
             <a href="#" id="saveClipChanges" class="btn btn-success">
               <span class="glyphicon glyphicon-ok"></span> Save </a>
-            <a href="#"  id="cancelClipChanges" class="btn btn-danger">
+            <a href="#" id="cancelClipChanges" class="btn btn-danger">
               <span class="glyphicon glyphicon-remove"></span> Cancel </a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div id="clipHelpInfo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="text-align: center;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Let's clear the air</h4>
+        </div>
+        <div class="modal-body" id="clipHelpData">
+          <p> Oops.. Seems I have misplaced Help Content :( </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="shortcutConfigPanel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="text-align: center;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Short-cut key configuration</h4>
+        </div>
+        <div class="modal-body" id="clipHelpData">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default shortcut-button active">
+              <input class="shortcut-button" name="shortKey" value="e" type="radio">ctrl + e
+            </label>
+            <label class="btn btn-default shortcut-button">
+              <input class="shortcut-button" name="shortKey" value="g" type="radio">ctrl + g
+            </label>
+            <label class="btn btn-default shortcut-button">
+              <input class="shortcut-button" name="shortKey" value="k" type="radio">ctrl + k
+            </label>
+            <label class="btn btn-default shortcut-button">
+              <input class="shortcut-button" name="shortKey" value="l" type="radio">ctrl + l
+            </label>
+            <label class="btn btn-default shortcut-button">
+              <input class="shortcut-button" name="shortKey" value="j" type="radio">ctrl + j
+            </label>
+          </div>
+          <br><br><br>
+          <p><b>Note:</b> Please restart the application to reflect these changes. Refer Help page for more info.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button id="shortcut-save" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <script id="categoryTabTemplate" type="x-tmpl-mustache">
     <a href="#" class="list-group-item text-center">
@@ -48,10 +104,18 @@
   </script>
   <script id="clipEditNode" type="x-tmpl-mustache">
     <div id="clipEditNode">
-      <span class="clipFieldName">Display name:</span> <input id="editClipDisplayName" class="clipFieldValue" type="text" name="Display Name" value="{{displayName}}">
-      <br><span class="clipFieldName"> Description:</span> <input id="editClipDescription" class="clipFieldValue" type="text" name="Description" value="{{description}}">
-      <br> <span class="clipFieldName">Value to be stored:</span> <input id="editClipStoredValue" class="clipFieldValue" {{#isSecured}}type="password"{{/isSecured}}{{^isSecured}}type="text"{{/isSecured}} name="value" value="{{storedValue}}">
-      <br><br><input type="checkbox" id="secureCheckBox" {{#isSecured}}checked="checked"{{/isSecured}} style="margin-left: 25%;float: left;">&nbsp;&nbsp;<span>Secured</span>
+      <span class="clipFieldName">Display name:</span>
+      <input id="editClipDisplayName" class="clipFieldValue" type="text" name="Display Name" value="{{displayName}}">
+      <br>
+      <span class="clipFieldName"> Description:</span>
+      <input id="editClipDescription" class="clipFieldValue" type="text" name="Description" value="{{description}}">
+      <br>
+      <span class="clipFieldName">Value to be stored:</span>
+      <input id="editClipStoredValue" class="clipFieldValue" {{#isSecured}}type="password" {{/isSecured}}{{^isSecured}}type="text" {{/isSecured}} name="value" value="{{storedValue}}">
+      <br>
+      <br>
+      <input type="checkbox" id="secureCheckBox" {{#isSecured}}checked="checked" {{/isSecured}} style="margin-left: 25%;float: left;">&nbsp;&nbsp;
+      <span>Secured</span>
       <div style="display: inline; float:right; padding-right:20%">
         <button data-toggle="tooltip" class="saveClip glyphicon glyphicon-ok btn-success" title="Save" />
         <button data-toggle="tooltip" class="removeClip glyphicon glyphicon-remove-circle btn-danger" title="cancel" />
@@ -66,7 +130,8 @@
         <div class="clipTextWrap displayName" data-toggle="tooltip" style="max-width:45%" title="Name: {{displayName}}">{{displayName}} </div>
         <div class="clipTextWrap description" data-toggle="tooltip" style="color: #9F81A9;max-width:40%;padding-left: 15px;" title="Description: {{description}}">{{description}}</div>
         <br/> {{#isSecured}}
-        <div class="clipTextWrap" style="color: #980808;width:70%;font-style: italic;padding-left: 30px;">Clip Value is secured</div><input class="secured" type="hidden" value="{{storedValue}}">{{/isSecured}} {{^isSecured}}
+        <div class="clipTextWrap" style="color: #980808;width:70%;font-style: italic;padding-left: 30px;">Clip Value is secured</div>
+        <input class="secured" type="hidden" value="{{storedValue}}">{{/isSecured}} {{^isSecured}}
         <div class="clipTextWrap storedValue" data-toggle="tooltip" style="color: ##366110;width:60%;padding-left: 30px;" title="StoredValue: {{storedValue}}">{{storedValue}}</div>{{/isSecured}}
         <div class="clipButtons">
           <button data-toggle="tooltip" class="editClip glyphicon glyphicon-edit btn-success" title="Edit" />
@@ -75,8 +140,8 @@
       </div>
     </div>
   </script>
-  <script src="./app/clipConfig.js"></script>
-  <link rel="stylesheet" href="./app/stylesheet/nav-tab.css">
+  <script src="./my-app/clipConfig.js"></script>
+  <link rel="stylesheet" href="./my-app/stylesheet/nav-tab.css">
 
 </body>
 

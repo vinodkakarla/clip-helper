@@ -1,5 +1,5 @@
 {
-  "name": "ClipManager",
+  "name": "clip-manager",
   "version": "1.0.0",
   "description": "My First Desktop App",
   "main": "index.js",
@@ -12,19 +12,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bootstrap": "^3.3.5",
+    "bootstrap": "^3.3.6",
     "electron": "^0.4.1",
-    "electron-packager": "^5.2.0",
-    "electron-prebuilt": "^0.32.3",
-    "mustache": "^2.1.3",
-    "node-webkit.jsx": "^0.1.1",
-    "fs-jetpack": "^0.7.0",
-    "node-schedule":"^1.0.0",
-    "electron-packager":"^7.0.0",
-    "jquery":"^2.2.3"
+    "electron-packager": "^7.0.3",
+    "electron-prebuilt": "^1.2.0",
+    "fs-jetpack": "^0.9.1",
+    "jquery": "^2.2.4",
+    "mustache": "^2.2.1",
+    "node-schedule": "^1.1.0"
   },
-  "dependencies": {
-    "electron-plugins": "0.0.4",
-    "electron-updater": "^0.2.2"
-  }
+  "dependencies": {}
 }
