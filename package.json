@@ -1,7 +1,7 @@
 {
   "name": "clip-manager",
-  "version": "1.0.0",
-  "description": "My First Desktop App",
+  "version": "1.0.1",
+  "description": "Cross platform desktop app for managing clipboards",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
@@ -14,12 +14,12 @@
   "devDependencies": {
     "bootstrap": "^3.3.6",
     "electron": "^0.4.1",
-    "electron-packager": "^7.0.3",
-    "electron-prebuilt": "^1.2.0",
-    "fs-jetpack": "^0.9.1",
-    "jquery": "^2.2.4",
+    "electron-packager": "^7.3.0",
+    "electron-prebuilt": "^1.2.7",
+    "fs-jetpack": "^0.9.2",
+    "jquery": "^3.1.0",
     "mustache": "^2.2.1",
-    "node-schedule": "^1.1.0"
+    "node-schedule": "^1.1.1"
   },
   "dependencies": {}
 }
