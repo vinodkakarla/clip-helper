@@ -29,4 +29,4 @@ To build a deployable package, please follow the below steps..
 * [Windows-i32](https://drive.google.com/uc?export=download&id=0B2oKOrmS5hGmMGYwb3J5WndKLVk)
 * [Linux-x64](https://drive.google.com/uc?export=download&id=0B2oKOrmS5hGma3pkTjAxZFg5TVE)
 * [Linux-i32](https://drive.google.com/uc?export=download&id=0B2oKOrmS5hGmN3FJcnJwaG1LV3c)
-* [Mac(Darwin arch)-x64](https://drive.google.com/uc?export=download&id=0B2oKOrmS5hGmdWdUaC1lZGJrd0E)
+* [Mac(Darwin arch)-x64](https://drive.google.com/uc?export=download&id=0B2oKOrmS5hGmMDg5Z21zZF9IUXM)
